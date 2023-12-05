@@ -50,15 +50,15 @@ jobs:
                 "attributes": {
                   "is-destroy": false,
                   "message": "Triggered by GitHub Actions",
-                  "terraform_version": "0.14.7"
+                  "terraform_version": "1.6.5",
                   "clusterName": "${{ github.event.inputs.clusterName }}",
                   "awsRegion": "${{ github.event.inputs.awsRegion }}"
                  }
                }
              }' \
-             https://app.terraform.io/api/v2/workspaces/ws-WghG4PVWFc9bhh8z/runs
-          env:
-            TFC_TOKEN_SECRET: ${{ secrets.TF_API_TOKEN }}
+             https://app.terraform.io/api/v2/workspaces/ws-WghG4PVWFc9bhh8z/runs \
+        env:
+          TFC_TOKEN_SECRET: ${{ secrets.TF_API_TOKEN }}
         working-directory: Terraform
   destroy_cluster:
     runs-on: ubuntu-latest
