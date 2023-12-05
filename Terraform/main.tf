@@ -10,23 +10,8 @@ terraform {
   }
 }
 
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      required_version = ">= 1.0"
-    }
-  }
-}
-
-provider "aws" {
-  region  = "us-west-2"
-  # Additional provider configuration...
-}
-
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.20.0"
+  source  = "https://github.com/samgabrail/terraform-aws-eks"
 
   region               = "us-east-1"
   cluster_version      = "1.27"
