@@ -11,7 +11,7 @@ terraform {
 }
 
 module "eks" {
-  source  = "github.com/samgabrail/terraform-aws-eks//main"
+  source  = "../modules/terraform-aws-eks"
 
   region               = "us-east-1"
   cluster_version      = "1.27"
