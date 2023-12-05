@@ -10,6 +10,12 @@ terraform {
   }
 }
 
+provider "aws" {
+  version = "~> 3.0"  # Use a version constraint
+  region  = "us-west-2"
+  # Additional provider configuration...
+}
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 19.20.0"
