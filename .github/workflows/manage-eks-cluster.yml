@@ -57,7 +57,7 @@ jobs:
              }' \
              https://app.terraform.io/api/v2/workspaces/ws-WghG4PVWFc9bhh8z/runs
           env:
-            TFC_TOKEN_SECRET: ${{ secrets.TFC_TOKEN }}
+            TFC_TOKEN_SECRET: ${{ secrets.TF_API_TOKEN }}
 
   destroy_cluster:
     runs-on: ubuntu-latest
