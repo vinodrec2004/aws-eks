@@ -10,8 +10,16 @@ terraform {
   }
 }
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
 provider "aws" {
-  version = "~> 3.0"  # Use a version constraint
   region  = "us-west-2"
   # Additional provider configuration...
 }
