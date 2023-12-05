@@ -38,8 +38,8 @@ jobs:
           export WORKSPACE_NAME=aws-eks
 
           # Additional inputs to pass to Terraform run
-          export TF_VAR_clusterName=${{ github.event.inputs.clusterName }}
-          export TF_VAR_awsRegion=${{ github.event.inputs.awsRegion }}
+          export WORKSPACE_NAME=aws-eks
+          export WORKSPACE_ID=ws-WghG4PVWFc9bhh8z
             
 
           curl \
@@ -51,7 +51,8 @@ jobs:
                   "is-destroy": false,
                   "message": "Triggered by GitHub Actions",
                   "terraform_version": "0.14.7"
-                   // Add more inputs as needed
+                  "clusterName": "${{ github.event.inputs.clusterName }}",
+                  "awsRegion": "${{ github.event.inputs.awsRegion }}"
                  }
                }
              }' \
