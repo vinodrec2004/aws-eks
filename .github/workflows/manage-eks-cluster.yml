@@ -50,7 +50,7 @@ jobs:
              }
             }
           }' \
-          https://app.terraform.io/api/v2/organizations/kids_mcds/workspaces/ws-WghG4PVWFc9bhh8z/runs \
+          https://app.terraform.io/api/v2/organizations/kids_mcds/workspaces/aws-eks/runs \
         working-directory: Terraform
   destroy_cluster:
     runs-on: ubuntu-latest
