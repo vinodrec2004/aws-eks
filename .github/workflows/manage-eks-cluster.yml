@@ -34,16 +34,9 @@ jobs:
         working-directory: Terraform
       - name: Trigger Terraform Run
         run: |
-          export TFC_TOKEN= ${{ secrets.TF_API_TOKEN }}
-          export WORKSPACE_NAME=aws-eks
-
-          # Additional inputs to pass to Terraform run
-          export WORKSPACE_NAME=aws-eks
-          export WORKSPACE_ID=ws-WghG4PVWFc9bhh8z
-            
 
           curl \
-            --header "Authorization: Bearer $TFC_TOKEN" \
+            --header "Authorization: Bearer  ua1X4yMyY9MJsw.atlasv1.gK41LZ9ORSkJmbPHINyXoCmeRIiZdTzUoHSdvk5Uvzy570qEFbRoYuXubDycnwlz8nI" \
             --header "Content-Type: application/vnd.api+json" \
             --request POST \
             --data '{
