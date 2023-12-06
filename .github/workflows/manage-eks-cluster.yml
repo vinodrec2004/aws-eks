@@ -57,7 +57,7 @@ jobs:
              }
             }
           }' \
-          https://app.terraform.io/api/v2/workspaces/$WORKSPACE_ID/runs \
+          https://app.terraform.io/api/v2/organizations/kids_mcds/workspaces/$WORKSPACE_ID/runs \
         env:
           TFC_TOKEN_SECRET: ${{ secrets.TF_API_TOKEN }}
         working-directory: Terraform
