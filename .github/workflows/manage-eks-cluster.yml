@@ -32,26 +32,10 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
         working-directory: Terraform
-      - name: Trigger Terraform Run
-        run: |
-
-          curl \
-            --header "Authorization: Bearer  ua1X4yMyY9MJsw.atlasv1.gK41LZ9ORSkJmbPHINyXoCmeRIiZdTzUoHSdvk5Uvzy570qEFbRoYuXubDycnwlz8nI" \
-            --header "Content-Type: application/vnd.api+json" \
-            --request POST \
-            --data '{
-            "data": {
-            "attributes": {
-            "is-destroy": false,
-            "message": "Triggered by GitHub Actions",
-            "terraform_version": "1.6.5",
-            "clusterName": "idk-eks-20",
-            "awsRegion": "eu-central-1"
-             }
-            }
-          }' \
-          https://app.terraform.io/api/v2/organizations/kids_mcds/workspaces/aws-eks/runs \
+      - name: Terrform plan and apply
+        run: terraform apply -var clusterName=${{ github.event.inputs.clusterName }} -var awsRegion=${{ github.event.inputs.awsRegion }} -auto-approve
         working-directory: Terraform
+
   destroy_cluster:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.action == 'destroy' }}
