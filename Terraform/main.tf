@@ -1,5 +1,6 @@
 terraform {
   backend "remote" {
+    hostname = "app.terraform.io"
     # The name of your Terraform Cloud organization.
     organization = "idp_ca"
 
