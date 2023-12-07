@@ -33,7 +33,7 @@ jobs:
         run: terraform validate
         working-directory: Terraform
       - name: Terrform plan and apply
-        run: terraform apply -var clusterName=${{ github.event.inputs.clusterName }} -var awsRegion=${{ github.event.inputs.awsRegion }} -auto-approve
+        run: terraform apply
         working-directory: Terraform
 
   destroy_cluster:
