@@ -9,7 +9,7 @@ terraform {
 }
 
 module "eks" {
-  source  = "../modules/terraform-aws-eks"
+  source  = "./modules/terraform-aws-eks"
 
   region               = "us-east-1"
   cluster_version      = "1.27"
