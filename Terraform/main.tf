@@ -1,12 +1,9 @@
 terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    # The name of your Terraform Cloud organization.
-    organization = "idp_ca"
+  cloud {
+    organization = "idp_bs"
 
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
-      name = "aws-eks"
+      name = "test-terraform"
     }
   }
 }
