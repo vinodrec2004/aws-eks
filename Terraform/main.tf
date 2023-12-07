@@ -11,7 +11,7 @@ terraform {
 module "eks" {
   source  = "./modules/terraform-aws-eks"
 
-  region               = "us-east-1"
+  region               = "eu-central-1"
   cluster_version      = "1.27"
   cluster_name         = "my_eks_cluster"
   instance_types       = ["t2.small"]
