@@ -56,5 +56,5 @@ jobs:
       run: terraform validate
       working-directory: Terraform
     - name: Terraform Destroy
-      run: terraform destroy -var clusterName=${{ github.event.inputs.clusterName }} -var awsRegion=${{ github.event.inputs.awsRegion }} -auto-approve
+      run: terraform destroy
       working-directory: Terraform
