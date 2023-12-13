@@ -13,7 +13,7 @@ module "eks" {
 
   region               = "eu-central-1"
   cluster_version      = "1.27"
-  cluster_name         = "idp"
+  cluster_name         = "idp1"
   instance_types       = ["t2.small"]
   vpc_cidr             = "10.0.0.0/16"
   cluster_min_size     = 1
